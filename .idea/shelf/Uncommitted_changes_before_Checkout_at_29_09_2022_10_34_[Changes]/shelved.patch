@@ -1,0 +1,21 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\"\r\n        content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <!-- Compiled and minified CSS -->\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css\">\r\n  <title>JS basics</title>\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n  <!--page content goes here -->\r\n  <div class=\"row\">\r\n    <div class=\"col s12 m6\">\r\n      <div class=\"card\">\r\n        <div class=\"card-content\">\r\n          <span class=\"card-title\">Card Title</span>\r\n          <div class=\"row\">\r\n            <form class=\"col s12\">\r\n              <div class=\"row\">\r\n                <div class=\"input-field col s6\">\r\n                  <input type=\"text\" id=\"task\">\r\n                  <label for=\"task\">New Task</label>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col s6\"></div>\r\n                <input type=\"submit\" class=\"btn\">\r\n              </div>\r\n            </form>\r\n          </div>\r\n        </div>\r\n        <div class=\"card-action\">Tasks</div>\r\n        <span class=\"card-title\" id=\"task-title\">My tasks</span>\r\n        <ul class=\"collection\">\r\n          <li class=\"collection-item\">Study HTML<a href=\"#\" class=\"blue-text text-darken-2 secondary-content\">X</a></li>\r\n          <li class=\"collection-item\">Study CSS<a href=\"#\" class=\"blue-text text-darken-2 secondary-content\">X</a></li>\r\n          <li class=\"collection-item\">Study JS<a href=\"#\" class=\"blue-text text-darken-2 secondary-content\">X</a></li>\r\n          <li class=\"collection-item\">Study Node.js<a href=\"#\" class=\"blue-text text-darken-2 secondary-content\">X</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- Compiled and minified JavaScript -->\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js\"></script>\r\n<script src=\"app.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 71105495b6f9020d6cccf9aaa3edf217e955f0fc)
++++ b/index.html	(date 1664436741392)
+@@ -18,7 +18,7 @@
+         <div class="card-content">
+           <span class="card-title">Card Title</span>
+           <div class="row">
+-            <form class="col s12">
++            <form class="col s12" id="task-form">
+               <div class="row">
+                 <div class="input-field col s6">
+                   <input type="text" id="task">
+diff --git a/app.js b/app.js
+deleted file mode 100644

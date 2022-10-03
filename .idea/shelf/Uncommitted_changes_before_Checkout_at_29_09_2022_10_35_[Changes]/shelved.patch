@@ -1,0 +1,32 @@
+Index: app.js
+===================================================================
+diff --git a/app.js b/app.js
+deleted file mode 100644
+--- a/app.js	(revision d8ea6b5b21e875f57d0f3bc399aea90bf50f92d2)
++++ /dev/null	(revision d8ea6b5b21e875f57d0f3bc399aea90bf50f92d2)
+@@ -1,25 +0,0 @@
+-const form = document.querySelector('form')
+-const taskInput = document.querySelector('#task')
+-form.addEventListener("submit", addTask)
+-
+-
+-function addTask(e){
+-    console.log(taskInput.value)
+-    const li = document.createElement('li')
+-    li.appendChild(document.createTextNode(taskInput.value))
+-    li.className = "collection-item"
+-    const a = document.createElement('a')
+-    a.appendChild(document.createTextNode('X'))
+-    a.className = 'blue-text text-darken-2 secondary-content'
+-    a.setAttribute('href', '#')
+-    li.appendChild(a)
+-    const ul = document.querySelector('ul', )
+-    ul.appendChild(li)
+-    taskInput.value = ''
+-    e.preventDefault()
+-}
+-
+-
+-
+-
+-
