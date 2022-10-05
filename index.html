@@ -36,9 +36,14 @@
                         </form>
                     </div>
                 </div>
-                <div class="col s1"></div>
+                <div class="col s12">
+                    <input type="text" id="keyword" onkeyup="findTask()">
+                    <label for="keyword">Find Task</label>
+                    <div class="row s2"></div>
+                </div>
+                <div class="col"></div>
                 <span class="card-title" id="task-title">My tasks</span>
-                <ul class="collection">
+                <ul id="ul" class="collection">
 
                 </ul>
             </div>

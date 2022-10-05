@@ -1,5 +1,6 @@
 const form = document.querySelector('form')
 const taskInput = document.querySelector('#task')
+const taskFind = document.querySelector('#keyword')
 const taskList = document.querySelector('ul')
 const tasksList = document.querySelector('#delbtn')
 
@@ -32,10 +33,11 @@ function deleteTask(e){
         }
     }
 }
-function deleteAllTasks(e) {
-    while(taskList.firstChild){
+function deleteAllTasks(e){
+    while (taskList.firstChild){
         taskList.removeChild(taskList.firstChild)
     }
+    localStorage.removeItem('tasks')
 }
 function addTaskLS(task){
     let tasks
@@ -48,23 +50,23 @@ function addTaskLS(task){
     localStorage.setItem("tasks", JSON.stringify(tasks))
 
 }
-function deleteTaskLS(task){
+function deleteTaskLS(task) {
     let tasks
-    if (localStorage.getItem("tasks") === null){
+    if(localStorage.getItem('tasks') === null){
         tasks = []
     } else {
-        tasks = JSON.parse(localStorage.getItem(tasks))
+        tasks = JSON.parse(localStorage.getItem('tasks'))
     }
     tasks.forEach((taskLS, taskIndex) => {
         if(taskLS === task){
-            task.splice((taskIndex, 1))
+            tasks.splice(taskIndex, 1)
         }
     })
-    localStorage.setItem("Tasks", JSON.stringify(tasks))
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 function getTasks(){
     let tasks
-    if (localStorage.getItem("tasks") === null){
+    if(localStorage.getItem('tasks') === null){
         tasks = []
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'))
@@ -72,13 +74,34 @@ function getTasks(){
     tasks.forEach((task) => {
         const li = document.createElement('li')
         li.appendChild(document.createTextNode(task))
-        li.className = "collection-item"
+        li.className = 'collection-item'
         const a = document.createElement('a')
         a.appendChild(document.createTextNode('X'))
         a.className = 'blue-text text-darken-2 secondary-content'
         a.setAttribute('href', '#')
         li.appendChild(a)
-        const ul = document.querySelector('ul', )
+        // add to list
+        const ul = document.querySelector('ul')
         ul.appendChild(li)
+    })
+}
+function findTask(key) {
+    let keyword = taskFind.value
+    let tasks
+    ul = document.getElementById("ul")
+    li = ul.getElementsByTagName('li')
+    if(localStorage.getItem('tasks') === null){
+        tasks = []
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
+    i = 0
+    tasks.forEach((task) =>{
+      if (task.includes(keyword)) {
+          li[i].style.display = ""
+      } else {
+          li[i].style.display = "none"
+      }
+      i++
     })
 }
